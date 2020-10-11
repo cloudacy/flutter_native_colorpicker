@@ -1,15 +1,35 @@
 # flutter_native_colorpicker
 
-A new flutter plugin project.
+This package will support all native color pickers shipped with the current OS.
 
-## Getting Started
+**Actually only works on iOS 14 and above.**
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+## Usage
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Simply open the color picker by run the following static method:
 
+```dart
+FlutterNativeColorpicker.open();
+```
+
+This just opens the color picker but does not listen for color input.
+
+2. To listen to inputs start a listener:
+
+```dart
+listener = FlutterNativeColorpicker.startListener((col) {
+  setState(() {
+    _color = col;
+  });
+});
+```
+
+**Important**: Please make sure to cancel the listener when disposing the view!
+
+```dart
+@override
+void dispose() {
+  listener.cancel();
+  super.dispose();
+}
+```
