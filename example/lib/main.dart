@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:flutter_native_colorpicker/flutter_native_colorpicker.dart';
 
 void main() {
@@ -15,15 +14,22 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Color _color = Colors.black;
+  StreamSubscription listener;
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> openColorpicker() async {
     FlutterNativeColorpicker.open();
-    FlutterNativeColorpicker.startListener((col) {
+    listener = FlutterNativeColorpicker.startListener((col) {
       setState(() {
         _color = col;
       });
     });
+  }
+
+  @override
+  void dispose() {
+    listener.cancel();
+    super.dispose();
   }
 
   @override
