@@ -1,4 +1,4 @@
-group 'com.example.flutter_native_colorpicker'
+group 'io.cloudacy.flutter_native_colorpicker'
 version '1.0-SNAPSHOT'
 
 buildscript {

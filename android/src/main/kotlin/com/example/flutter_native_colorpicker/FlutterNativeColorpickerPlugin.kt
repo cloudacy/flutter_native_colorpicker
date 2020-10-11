@@ -1,4 +1,4 @@
-package com.example.flutter_native_colorpicker
+package io.cloudacy.flutter_native_colorpicker
 
 import androidx.annotation.NonNull
 

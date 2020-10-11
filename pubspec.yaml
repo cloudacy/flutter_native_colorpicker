@@ -1,8 +1,8 @@
 name: flutter_native_colorpicker
-description: A new flutter plugin project.
+description: Use native color pickers shipped with the OS.
 version: 0.0.1
-author:
-homepage:
+author: Patrick Kuen <p.kuen@cloudacy.com>
+homepage: www.cloudacy.com
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -28,7 +28,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.example.flutter_native_colorpicker
+        package: io.cloudacy.flutter_native_colorpicker
         pluginClass: FlutterNativeColorpickerPlugin
       ios:
         pluginClass: FlutterNativeColorpickerPlugin
