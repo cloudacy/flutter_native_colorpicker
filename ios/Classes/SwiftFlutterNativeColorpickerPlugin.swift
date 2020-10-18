@@ -12,6 +12,7 @@ public class SwiftFlutterNativeColorpickerPlugin: NSObject, FlutterPlugin {
     let eventChannel = FlutterEventChannel(name: "flutter_native_colorpicker/event", binaryMessenger: registrar.messenger())
     
     let picker = UIColorPickerViewController()
+    picker.modalPresentationStyle = .popover
     let handler = SwiftFlutterNativeColorpickerEventHandler()
     picker.delegate = handler
     eventChannel.setStreamHandler(handler)
@@ -26,11 +27,23 @@ public class SwiftFlutterNativeColorpickerPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    let viewController = UIApplication.shared.keyWindow?.rootViewController
+    let arguments = call.arguments as! Dictionary<String, Any>
 
-    viewController?.present(colorPicker, animated: true, completion: {
-      print("presented")
-    })
+    let viewController = UIApplication.shared.keyWindow?.rootViewController
+    
+    if let popoverController = colorPicker.popoverPresentationController {
+      guard let sourceDict = arguments["origin"] as? Dictionary<String, Double> else {
+        result(FlutterError(code: "BadArguments", message: "Origin must be a Map containing x, y, width, and height properties", details: nil))
+        return
+      }
+      
+      let sourceRect = CGRect(x: sourceDict["x"]!, y: sourceDict["y"]!, width: sourceDict["width"]!, height: sourceDict["height"]!)
+      
+      popoverController.sourceView = viewController?.view
+      popoverController.sourceRect = sourceRect
+    }
+
+    viewController?.present(colorPicker, animated: true)
   }
 }
 

@@ -13,12 +13,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  GlobalKey key = GlobalKey();
   Color _color = Colors.black;
   StreamSubscription listener;
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> openColorpicker() async {
-    FlutterNativeColorpicker.open();
+    final RenderBox box = key.currentContext.findRenderObject();
+    final position = box.localToGlobal(Offset.zero);
+
+    FlutterNativeColorpicker.open(position & box.size);
     listener = FlutterNativeColorpicker.startListener((col) {
       setState(() {
         _color = col;
@@ -43,6 +47,7 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: [
               TextButton(
+                key: key,
                 onPressed: () {
                   openColorpicker();
                 },

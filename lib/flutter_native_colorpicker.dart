@@ -25,11 +25,21 @@ class FlutterNativeColorpicker {
     return subscription;
   }
 
-  static void open() async {
+  static void open(Rect origin) async {
     if (!Platform.isIOS) {
       throw UnsupportedError('Currently only iOS 14.0 and above is supported by this plugin.');
     }
 
-    await _channel.invokeMethod('openColorpicker');
+    await _channel.invokeMethod(
+      'openColorpicker',
+      {
+        'origin': {
+          'x': origin.left,
+          'y': origin.top,
+          'width': origin.width,
+          'height': origin.height,
+        },
+      },
+    );
   }
 }
