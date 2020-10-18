@@ -6,10 +6,10 @@ This package will support all native color pickers shipped with the current OS.
 
 ## Usage
 
-1. Simply open the color picker by run the following static method:
+1. Simply open the color picker by run the following static method: (origin must be a valid Rect -> see full example for help)
 
 ```dart
-FlutterNativeColorpicker.open();
+FlutterNativeColorpicker.open(origin);
 ```
 
 This just opens the color picker but does not listen for color input.

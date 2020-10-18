@@ -1,8 +1,7 @@
 name: flutter_native_colorpicker
 description: Use native color pickers shipped with the OS.
-version: 0.0.1
-author: Patrick Kuen <p.kuen@cloudacy.com>
-homepage: www.cloudacy.com
+version: 1.0.0
+homepage: https://www.cloudacy.com
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
