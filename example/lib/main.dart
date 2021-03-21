@@ -15,11 +15,16 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   GlobalKey key = GlobalKey();
   Color _color = Colors.black;
-  StreamSubscription listener;
+  StreamSubscription? listener;
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> openColorpicker() async {
-    final RenderBox box = key.currentContext.findRenderObject();
+    final box = key.currentContext?.findRenderObject();
+
+    if (!(box is RenderBox)) {
+      throw StateError('Render object is not a render box');
+    }
+
     final position = box.localToGlobal(Offset.zero);
 
     FlutterNativeColorpicker.open(position & box.size);
@@ -32,7 +37,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void dispose() {
-    listener.cancel();
+    listener?.cancel();
     super.dispose();
   }
 
