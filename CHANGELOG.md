@@ -1,3 +1,7 @@
+### 1.0.2
+
+- Upgrade gradle dependencies
+
 ### 1.0.1
 
 - Migrate to null safety (no breaking changes)
