@@ -1,0 +1,8 @@
+include: package:flutter_lints/flutter.yaml
+
+# https://dart.dev/guides/language/analysis-options
+analyzer:
+  strong-mode:
+
+  exclude:
+    - 'lib/generated/**'
