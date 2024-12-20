@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_native_colorpicker/flutter_native_colorpicker.dart';
 
 void main() {
@@ -9,10 +10,12 @@ void main() {
 
 class MyApp extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  final _flutterNativeColorpickerPlugin = FlutterNativeColorpicker();
+
   GlobalKey key = GlobalKey();
   Color _color = Colors.black;
   StreamSubscription? listener;
@@ -27,12 +30,13 @@ class _MyAppState extends State<MyApp> {
 
     final position = box.localToGlobal(Offset.zero);
 
-    FlutterNativeColorpicker.open(position & box.size);
-    listener = FlutterNativeColorpicker.startListener((col) {
+    listener = _flutterNativeColorpickerPlugin.startListener((col) {
       setState(() {
         _color = col;
       });
     });
+
+    await _flutterNativeColorpickerPlugin.open(position & box.size);
   }
 
   @override

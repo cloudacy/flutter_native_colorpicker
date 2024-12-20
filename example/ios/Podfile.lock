@@ -14,9 +14,9 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_native_colorpicker/ios"
 
 SPEC CHECKSUMS:
-  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  flutter_native_colorpicker: 56b617572eacbdbc4f468baa6b6e7501270721d7
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  flutter_native_colorpicker: 1125305e68b157b10e988aa35fddda0d71b9df16
 
-PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+PODFILE CHECKSUM: c4c93c5f6502fe2754f48404d3594bf779584011
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.16.2
