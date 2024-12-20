@@ -1,6 +1,6 @@
 PODS:
   - Flutter (1.0.0)
-  - flutter_native_colorpicker (2.0.1):
+  - flutter_native_colorpicker (3.0.0):
     - Flutter
 
 DEPENDENCIES:
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_native_colorpicker: 1125305e68b157b10e988aa35fddda0d71b9df16
+  flutter_native_colorpicker: ff59027caa76e6adf19096d1095e278367302df4
 
 PODFILE CHECKSUM: c4c93c5f6502fe2754f48404d3594bf779584011
 

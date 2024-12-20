@@ -1,6 +1,20 @@
-### 1.0.2
+# 3.0.0
+
+- Upgrade dependencies
+- Now uses the platform interface
+- New version requirements:
+  - Android: minSdk = 21
+  - iOS: min Version = 12.0
+  - dart: ^3.6.0
+  - flutter >=3.3.0
+
+# 2.0.0
 
 - Upgrade gradle dependencies
+
+### 2.0.1
+
+- Minor iOS project file fix
 
 ### 1.0.1
 
