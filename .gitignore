@@ -6,5 +6,7 @@
 
 .packages
 .pub/
+.build/
+.swiftpm/
 
 build/
