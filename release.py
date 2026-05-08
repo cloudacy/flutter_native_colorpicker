@@ -51,9 +51,6 @@ print('Updated pubspec.yaml and ios/flutter_native_colorpicker.podspec! Running 
 # update lockfiles
 subprocess.run(['flutter', 'pub', 'get'])
 
-# update example iOS Podfile.lock
-subprocess.run(['pod', 'install'], cwd = 'example/ios')
-
 print('Staging pubspec.yaml, pubspec.lock, ios/flutter_native_colorpicker.podspec, example/pubspec.lock and CHANGELOG.md ...')
 
 subprocess.run(['git', 'add', 'pubspec.yaml'])
