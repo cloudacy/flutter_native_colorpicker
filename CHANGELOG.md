@@ -1,3 +1,10 @@
+# 4.0.0
+
+- SwiftPM support
+  - iOS: min Version = 13.0
+  - dart: >=3.11.0
+  - flutter >=3.41.0
+
 # 3.0.0
 
 - Upgrade dependencies
